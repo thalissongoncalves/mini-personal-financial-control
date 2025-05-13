@@ -6,7 +6,7 @@ function App() {
   return (
     <div className='mainContainer'>
       <Header />
-      <hr />
+      <hr style={{border: '0.1px solid rgba(226, 226, 226, 0.65)'}} />
     </div>
   )
 }
