@@ -1,0 +1,124 @@
+.form-container {
+  align-items: flex-end;
+  display: grid;
+  font-weight: 600;
+  gap: 15px;
+  justify-items: center;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+select {
+  align-items: center;
+  border: 2px solid #ddd;
+  background: #fff;
+  font-weight: 400;
+  font-size: 13px;
+  padding: 20px;
+  transition: 0.4s;
+}
+
+select:hover,
+select:focus {
+  background: #f2f2f2;
+}
+select::picker-icon {
+  color: #999;
+  transition: 0.4s rotate;
+}
+select:open::picker-icon {
+  rotate: 180deg;
+}
+::picker(select) {
+  border: none;
+}
+option {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 10px;
+  transition: 0.4s;
+}
+option:first-of-type {
+  border-radius: 8px 8px 0 0;
+}
+
+option:last-of-type {
+  border-radius: 0 0 8px 8px;
+}
+
+option:not(option:last-of-type) {
+  border-bottom: none;
+}
+option:nth-of-type(odd) {
+  background: #fff;
+}
+
+option:hover,
+option:focus {
+  background: #f2f2f2;
+}
+option .icon {
+  font-size: 1.6rem;
+  text-box: trim-both cap alphabetic;
+}
+selectedcontent .icon {
+  display: none;
+}
+option:checked {
+  font-weight: bold;
+}
+option::checkmark {
+  order: 1;
+  margin-left: auto;
+  content: "☑️";
+}
+::picker(select) {
+  opacity: 0;
+  transition: all 0.4s allow-discrete;
+}
+::picker(select):popover-open {
+  opacity: 1;
+}
+@starting-style {
+  ::picker(select):popover-open {
+    opacity: 0;
+  }
+}
+
+.button-group button {
+  background-color: #216DDA;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.button-group button {
+  height: 30px;
+  padding: 0 5px;
+  margin: 5px 0px;
+}
+
+.form-group input,
+.form-group select {
+  border: 1px solid #E7E7E7;
+  border-radius: 5px;
+  box-shadow: 0.1px 0.1px 1px 1px #E7E7E7;
+}

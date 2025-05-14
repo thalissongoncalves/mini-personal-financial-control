@@ -1,22 +1,30 @@
+import "./TransactionForm.css"
+
 const TransactionForm = () => {
   return(
-    <div className="transactionFormContainer">
-      <form>
-        <label>
-          Descrição
+    <main>
+      <form className="form-container">
+        <label className="form-group">
+          <span>Descrição</span>
           <input type="text" />
         </label>
-        <label>
-          Valor
+        <label className="form-group">
+          <span>Valor</span>
           <input type="number" />
         </label>
-        <label>
-          Tipo
-          <select />
+        <label className="form-group">
+          <span>Tipo</span>
+          <select>
+            <option>Selecione um tipo</option>
+            <option>Receita</option>
+            <option>Despesa</option>
+          </select>
         </label>
-        <button>Adicionar</button>
+        <div className="form-group button-group">
+          <button>Adicionar</button>
+        </div>
       </form>
-    </div>
+    </main>
   )
 }
 
