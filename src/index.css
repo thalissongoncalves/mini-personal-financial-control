@@ -5,10 +5,13 @@ body {
   display: flex;
   flex-direction: column;
   font-family: 'Inter', sans-serif;
-  height: 100vh;
   justify-content: center;
   margin: 0;
   padding: 10px;
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
+}
+
+html, body, #root {
+  height: 100%;
 }

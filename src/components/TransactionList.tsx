@@ -1,8 +1,14 @@
 import TransactionItem from './TransactionItem';
+import "./TransactionList.css"
 
 const TransactionList = () => {
   return(
-    <div>
+    <div className='transacion-list-container'>
+      <TransactionItem />
+      <TransactionItem />
+      <TransactionItem />
+      <TransactionItem />
+      <TransactionItem />
       <TransactionItem />
       <TransactionItem />
       <TransactionItem />

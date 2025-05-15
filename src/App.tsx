@@ -9,14 +9,14 @@ function App() {
   return (
     <div className='mainContainer'>
       <Header />
-      <hr style={{border: '0.1px solid rgba(226, 226, 226, 0.65)'}} />
-      <main>
+      <hr style={{border: '0.1px solid rgba(226, 226, 226, 0.65)', width: '100%'}} />
+      {/* <main> */}
         <TransactionForm />
-        <hr style={{border: '0.1px solid rgba(226, 226, 226, 0.65)'}} />
+        <hr style={{border: '0.1px solid rgba(226, 226, 226, 0.65)', width: '100%'}} />
         <Filter />
-        <hr style={{border: '0.1px solid rgba(226, 226, 226, 0.65)'}} />
+        <hr style={{border: '0.1px solid rgba(226, 226, 226, 0.65)', width: '100%'}} />
         <TransactionList />
-      </main>
+      {/* </main> */}
     </div>
   )
 }

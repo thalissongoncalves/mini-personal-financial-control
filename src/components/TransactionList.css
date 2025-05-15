@@ -1,0 +1,5 @@
+.transacion-list-container {
+  padding: 0 5%;
+  overflow-y: auto;
+  margin-bottom: 5px;
+}
