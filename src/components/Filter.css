@@ -1,0 +1,30 @@
+.filterContainer {
+  align-items: center;
+  display: flex;
+
+  height: 3em;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.filterContainer button {
+  background-color: #fff;
+  border: 1px solid #E7E7E7;
+  box-shadow: 0.1px 0.1px 1px 1px #E7E7E7;
+  font-weight: 600;
+  height: 30px;
+  width: 100px;
+}
+
+.filterBtnAll {
+  border-radius: 5px 0 0 5px;
+}
+
+.filterBtnExpenses {
+  border-radius: 0 5px 5px 0;
+}
+
+.filterContainer button:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}

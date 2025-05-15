@@ -108,6 +108,10 @@ option::checkmark {
   font-weight: 600;
 }
 
+.button-group button:hover {
+  cursor: pointer;
+}
+
 .form-group input,
 .form-group select,
 .button-group button {

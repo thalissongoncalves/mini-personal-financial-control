@@ -13,6 +13,7 @@ function App() {
         <TransactionForm />
         <hr style={{border: '0.1px solid rgba(226, 226, 226, 0.65)'}} />
         <Filter />
+        <hr style={{border: '0.1px solid rgba(226, 226, 226, 0.65)'}} />
       </main>
     </div>
   )
