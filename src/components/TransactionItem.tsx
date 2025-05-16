@@ -21,13 +21,11 @@ const TransactionItem = ({ description, value, type }: IList) => {
           </span>
         )}
         {type == "revenue" ? (
-          <span style={{ fontWeight: 600, color: '#5DCD60' }}>
+          <span style={{ fontWeight: 600, color: "#5DCD60" }}>
             {valueFormated}
           </span>
         ) : (
-          <span style={{ fontWeight: 600, color: 'red' }}>
-            {valueFormated}
-          </span>
+          <span style={{ fontWeight: 600, color: "red" }}>{valueFormated}</span>
         )}
       </div>
       <hr

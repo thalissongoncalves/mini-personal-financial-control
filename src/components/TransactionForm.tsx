@@ -23,20 +23,32 @@ const TransactionForm = ({
   const [value, setValue] = useState("");
   const [type, setType] = useState("");
 
-  const handleAddItem = (e: { preventDefault: () => void; }) => {
-    e.preventDefault()
+  const handleAddItem = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
 
     if (type === "revenue") {
-      setAllList([...allList, {description: description, value: value, type: type}])
-      setRevenueList([...revenueList, {description: description, value: value, type: type}])
+      setAllList([
+        ...allList,
+        { description: description, value: value, type: type },
+      ]);
+      setRevenueList([
+        ...revenueList,
+        { description: description, value: value, type: type },
+      ]);
     } else if (type === "expense") {
-      setAllList([...allList, {description: description, value: value, type: type}])
-      setExpenseList([...expenseList, {description: description, value: value, type: type}])
+      setAllList([
+        ...allList,
+        { description: description, value: value, type: type },
+      ]);
+      setExpenseList([
+        ...expenseList,
+        { description: description, value: value, type: type },
+      ]);
     }
-    
-    setDescription("")
-    setValue("")
-    setType("")
+
+    setDescription("");
+    setValue("");
+    setType("");
   };
 
   return (

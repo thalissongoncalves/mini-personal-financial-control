@@ -49,7 +49,10 @@ function App() {
           width: "100%",
         }}
       />
-      <Filter filterSelected={filterSelected} setFilterSelected={setFilterSelected} />
+      <Filter
+        filterSelected={filterSelected}
+        setFilterSelected={setFilterSelected}
+      />
       <hr
         style={{
           border: "0.1px solid rgba(226, 226, 226, 0.65)",

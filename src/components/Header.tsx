@@ -16,9 +16,7 @@ const Header = ({ total }: IHeader) => {
       <h2 className="headerSubTitle">
         Total Atual:{" "}
         <span
-          className={
-            Number(total) >= 0 ? "totalValueGreen" : "totalValueRed"
-          }
+          className={Number(total) >= 0 ? "totalValueGreen" : "totalValueRed"}
         >
           {totalFormated}
         </span>

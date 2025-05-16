@@ -30,18 +30,24 @@ const Filter = ({ filterSelected, setFilterSelected }: IFilterSelected) => {
       >
         Todas
       </button>
-      <button className={
+      <button
+        className={
           filterSelected === "revenue"
             ? "filterBtnRevenues filterBtnActivated"
             : "filterBtnRevenues"
-        } onClick={handleRevenueSelected}>
+        }
+        onClick={handleRevenueSelected}
+      >
         Receitas
       </button>
-      <button className={
+      <button
+        className={
           filterSelected === "expense"
             ? "filterBtnExpenses filterBtnActivated"
             : "filterBtnExpenses"
-        } onClick={handleExpenseSelected}>
+        }
+        onClick={handleExpenseSelected}
+      >
         Despesas
       </button>
     </div>
