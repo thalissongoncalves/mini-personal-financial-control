@@ -1,23 +1,24 @@
-import TransactionItem from './TransactionItem';
-import "./TransactionList.css"
+import type { IList } from "../App";
+import TransactionItem from "./TransactionItem";
+import "./TransactionList.css";
 
-const TransactionList = () => {
-  return(
-    <div className='transacion-list-container'>
-      <TransactionItem />
-      <TransactionItem />
-      <TransactionItem />
-      <TransactionItem />
-      <TransactionItem />
-      <TransactionItem />
-      <TransactionItem />
-      <TransactionItem />
-      <TransactionItem />
-      <TransactionItem />
-      <TransactionItem />
-      <TransactionItem />
-    </div>
-  )
+interface IAllList {
+  allList: IList[];
 }
+
+const TransactionList = ({ allList }: IAllList) => {
+  return (
+    <div className="transacion-list-container">
+      {allList.map((item, i) => (
+        <TransactionItem
+          key={i}
+          description={item.description}
+          value={item.value}
+          type={item.type}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default TransactionList;

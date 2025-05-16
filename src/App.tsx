@@ -19,8 +19,11 @@ function App() {
 
   useEffect(() => {
     revenueList.map((item) => setTotal(total + Number(item.value)))
+  }, [revenueList])
+
+  useEffect(() => {
     expenseList.map((item) => setTotal(total - Number(item.value)))
-  }, [revenueList, expenseList])
+  }, [expenseList])
 
   return (
     <div className="mainContainer">
@@ -52,7 +55,7 @@ function App() {
           width: "100%",
         }}
       />
-      <TransactionList />
+      <TransactionList allList={allList} />
     </div>
   );
 }
