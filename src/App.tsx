@@ -19,12 +19,10 @@ function App() {
   const [filterSelected, setFilterSelected] = useState<string>("all");
 
   useEffect(() => {
-    revenueList.map((item) => setTotal(total + Number(item.value)));
-  }, [revenueList]);
-
-  useEffect(() => {
-    expenseList.map((item) => setTotal(total - Number(item.value)));
-  }, [expenseList]);
+    const totalRevenue = revenueList.reduce((acc, curr) => acc + Number(curr.value), 0);
+    const totalExpense = expenseList.reduce((acc, curr) => acc + Number(curr.value), 0);
+    setTotal(totalRevenue - totalExpense);
+  }, [revenueList, expenseList]);
 
   return (
     <div className="mainContainer">
