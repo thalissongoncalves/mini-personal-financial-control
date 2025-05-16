@@ -1,10 +1,19 @@
 import "./Header.css"
 
-const Header = () => {
+interface IHeader {
+  total: number
+}
+
+const Header = ({total}: IHeader) => {
+  const totalFormated = total.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  });
+
   return(
     <header className="headerContainer">
       <h1 className="headerTitle">Controle Financeiro Pessoal</h1>
-      <h2 className="headerSubTitle">Total Atual: <span className="totalValue">R$ 2.200</span></h2>
+      <h2 className="headerSubTitle">Total Atual: <span className="totalValue">{totalFormated}</span></h2>
     </header>
   )
 }
