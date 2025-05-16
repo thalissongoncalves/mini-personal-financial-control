@@ -8,7 +8,6 @@
 }
 
 .filterContainer button {
-  background-color: #fff;
   border: 1px solid #E7E7E7;
   box-shadow: 0.1px 0.1px 1px 1px #E7E7E7;
   font-weight: 600;
@@ -17,14 +16,24 @@
 }
 
 .filterBtnAll {
+  background-color: #fff;
   border-radius: 5px 0 0 5px;
 }
 
 .filterBtnExpenses {
+  background-color: #fff;
   border-radius: 0 5px 5px 0;
+}
+
+.filterBtnRevenues {
+  background-color: #fff;
 }
 
 .filterContainer button:hover {
   background-color: #f2f2f2;
   cursor: pointer;
+}
+
+.filterBtnActivated {
+  background-color: #f2f2f2;
 }

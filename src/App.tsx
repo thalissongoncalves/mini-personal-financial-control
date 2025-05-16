@@ -6,24 +6,25 @@ import TransactionForm from "./components/TransactionForm";
 import TransactionList from "./components/TransactionList";
 
 export interface IList {
-  description: string,
-  value: string,
-  type: string
+  description: string;
+  value: string;
+  type: string;
 }
 
 function App() {
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState<number>(0);
   const [allList, setAllList] = useState<IList[]>([]);
   const [revenueList, setRevenueList] = useState<IList[]>([]);
   const [expenseList, setExpenseList] = useState<IList[]>([]);
+  const [filterSelected, setFilterSelected] = useState<string>("all");
 
   useEffect(() => {
-    revenueList.map((item) => setTotal(total + Number(item.value)))
-  }, [revenueList])
+    revenueList.map((item) => setTotal(total + Number(item.value)));
+  }, [revenueList]);
 
   useEffect(() => {
-    expenseList.map((item) => setTotal(total - Number(item.value)))
-  }, [expenseList])
+    expenseList.map((item) => setTotal(total - Number(item.value)));
+  }, [expenseList]);
 
   return (
     <div className="mainContainer">
@@ -48,14 +49,19 @@ function App() {
           width: "100%",
         }}
       />
-      <Filter />
+      <Filter filterSelected={filterSelected} setFilterSelected={setFilterSelected} />
       <hr
         style={{
           border: "0.1px solid rgba(226, 226, 226, 0.65)",
           width: "100%",
         }}
       />
-      <TransactionList allList={allList} />
+      <TransactionList
+        filterSelected={filterSelected}
+        allList={allList}
+        revenueList={revenueList}
+        expenseList={expenseList}
+      />
     </div>
   );
 }
