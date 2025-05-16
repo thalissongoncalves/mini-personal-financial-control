@@ -23,28 +23,16 @@ const TransactionForm = ({
   const [value, setValue] = useState("");
   const [type, setType] = useState("");
 
-  const handleAddItem = (e: { preventDefault: () => void }) => {
+  const handleAddItem = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (type === "revenue") {
-      setAllList([
-        ...allList,
-        { description: description, value: value, type: type },
-      ]);
-      setRevenueList([
-        ...revenueList,
-        { description: description, value: value, type: type },
-      ]);
-    } else if (type === "expense") {
-      setAllList([
-        ...allList,
-        { description: description, value: value, type: type },
-      ]);
-      setExpenseList([
-        ...expenseList,
-        { description: description, value: value, type: type },
-      ]);
-    }
+    if (!description || !value || !type) return;
+
+    const newItem: IList = { description, value, type };
+
+    setAllList([...allList, newItem]);
+    if (type === "revenue") setRevenueList([...revenueList, newItem]);
+    else if (type === "expense") setExpenseList([...expenseList, newItem]);
 
     setDescription("");
     setValue("");
@@ -52,7 +40,7 @@ const TransactionForm = ({
   };
 
   return (
-    <form className="form-container">
+    <form className="form-container" onSubmit={handleAddItem}>
       <label className="form-group">
         <span>Descrição</span>
         <input
@@ -87,7 +75,7 @@ const TransactionForm = ({
         </select>
       </label>
       <div className="form-group button-group">
-        <button onClick={handleAddItem}>Adicionar</button>
+        <button>Adicionar</button>
       </div>
     </form>
   );
