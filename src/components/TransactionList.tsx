@@ -16,7 +16,7 @@ const TransactionList = ({
   expenseList,
 }: IAllList) => {
   return (
-    <div className="transacion-list-container">
+    <div className="transaction-list-container">
       {filterSelected == "all" &&
         allList.map((item, i) => (
           <TransactionItem
